@@ -9,11 +9,15 @@ dotenv.config();
 
 const app = express();
 
-// Middleware
+// CORS Configuration
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://delhi-digital-co-invoice-management-system-assignmen-e0121mkm.vercel.app'],
-  credentials: true
+  origin: ['http://localhost:3000', 'http://localhost:3001'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: false
 }));
+
+// Middleware
 app.use(express.json());
 
 // MongoDB Connection
