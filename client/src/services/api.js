@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://invoice-management-system-server.onrender.com/api';
+const API_URL = 'https://server-op3vr9pcl-lashettys-projects.vercel.app/api';
 
 const api = axios.create({
   baseURL: API_URL,
