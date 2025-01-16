@@ -2,155 +2,167 @@
 
 A full-stack MERN (MongoDB, Express.js, React.js, Node.js) application for managing invoices with user authentication.
 
-## Live Demo
+## Repository
+- GitHub: [https://github.com/LASHETTY/invoice-management-system.git](https://github.com/LASHETTY/invoice-management-system.git)
 
-- Frontend: [Vercel Link - Coming Soon]
-- Backend: [Render Link - Coming Soon]
+## Live Demo
+- Frontend (Vercel): [Coming Soon]
+- Backend (Render): [Coming Soon]
 
 ## Features
 
-- 👤 User Authentication (Login/Register)
-- 📝 Create, Read, Update, and Delete Invoices
-- 📊 Invoice listing with sorting and filtering capabilities
-- 🎨 Modern and Responsive Material-UI design
-- ✅ Form validation
-- 🔒 Secure authentication using JWT
-- 💾 Data persistence using MongoDB
+- 👤 User Authentication
+  - Secure Login/Register system
+  - JWT-based authentication
+  - Protected routes
+
+- 📝 Invoice Management
+  - Create new invoices
+  - View all invoices in a list
+  - Update existing invoices
+  - Delete invoices
+  - Invoice fields include:
+    - Invoice Number
+    - Client Name
+    - Date
+    - Amount
+    - Status (Paid/Unpaid/Pending)
+
+- 🔍 Advanced Features
+  - Sort invoices by different fields
+  - Filter invoices by status
+  - Search invoices by client name or invoice number
+  - Responsive design for mobile and desktop
 
 ## Tech Stack
 
 ### Frontend
-- React.js
-- React Router for navigation
-- Material-UI for design components
+- React.js 18.2.0
+- React Router Dom 6.9.0
+- Material-UI (MUI) 5.11.11
 - Axios for API requests
 - Context API for state management
 
 ### Backend
 - Node.js
 - Express.js
-- MongoDB for database
+- MongoDB with Mongoose
 - JWT for authentication
 - Bcrypt for password hashing
 
-## Project Structure
-
-```
-invoice-management-system/
-├── client/                 # Frontend React application
-│   ├── public/
-│   └── src/
-│       ├── components/
-│       ├── contexts/
-│       ├── pages/
-│       └── services/
-└── server/                 # Backend Express application
-    ├── models/
-    ├── routes/
-    └── middleware/
-```
-
-## Local Development Setup
+## Quick Start
 
 ### Prerequisites
-
 - Node.js (v14 or higher)
-- MongoDB installed locally or MongoDB Atlas account
-- npm or yarn package manager
+- MongoDB
+- npm or yarn
 
 ### Backend Setup
+```bash
+# Navigate to server directory
+cd server
 
-1. Navigate to the server directory:
-   ```bash
-   cd server
-   ```
+# Install dependencies
+npm install
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+# Create .env file in server directory with:
+PORT=5000
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
 
-3. Create a .env file in the server directory with the following variables:
-   ```
-   PORT=5000
-   MONGODB_URI=your_mongodb_connection_string
-   JWT_SECRET=your_jwt_secret
-   ```
-
-4. Start the server:
-   ```bash
-   npm run dev
-   ```
+# Start server
+npm run dev
+```
 
 ### Frontend Setup
+```bash
+# Navigate to client directory
+cd client
 
-1. Navigate to the client directory:
-   ```bash
-   cd client
-   ```
+# Install dependencies
+npm install
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+# Create .env file in client directory with:
+REACT_APP_API_URL=http://localhost:5000/api
 
-3. Create a .env file in the client directory:
-   ```
-   REACT_APP_API_URL=http://localhost:5000/api
-   ```
+# Start React app
+npm start
 
-4. Start the React application:
-   ```bash
-   npm start
-   ```
-
-The application will be available at `http://localhost:3000`
+# For production build
+npm run build
+```
 
 ## API Endpoints
 
 ### Authentication
-- POST /api/auth/register - Register a new user
-- POST /api/auth/login - Login user
+```
+POST /api/auth/register - Register new user
+POST /api/auth/login - Login user
+```
 
 ### Invoices
-- GET /api/invoices - Get all invoices
-- POST /api/invoices - Create new invoice
-- PUT /api/invoices/:id - Update invoice
-- DELETE /api/invoices/:id - Delete invoice
+```
+GET /api/invoices - Get all invoices
+POST /api/invoices - Create new invoice
+PUT /api/invoices/:id - Update invoice
+DELETE /api/invoices/:id - Delete invoice
+```
 
-## Features in Detail
+## Project Structure
+```
+invoice-management-system/
+├── client/                 # Frontend React application
+│   ├── public/            # Public assets
+│   └── src/
+│       ├── components/    # Reusable components
+│       ├── contexts/      # Context providers
+│       ├── pages/         # Page components
+│       └── services/      # API services
+└── server/                # Backend Express application
+    ├── models/           # MongoDB models
+    ├── routes/           # API routes
+    └── middleware/       # Custom middleware
+```
 
-### User Authentication
-- Secure registration and login system
-- JWT-based authentication
-- Protected routes for authenticated users
+## Environment Variables
 
-### Invoice Management
-- Create new invoices with details like invoice number, client name, amount, and status
-- View list of all invoices with sorting and filtering options
-- Update existing invoices
-- Delete invoices
-- Status tracking (Paid, Unpaid, Pending)
+### Backend (.env)
+```
+PORT=5000
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+```
 
-### UI/UX Features
-- Responsive design that works on desktop and mobile
-- Material-UI components for a modern look
-- Form validation and error handling
-- Loading states and error messages
-- Clean and intuitive navigation
+### Frontend (.env)
+```
+REACT_APP_API_URL=http://localhost:5000/api
+```
 
 ## Deployment
 
 ### Frontend (Vercel)
-- Automated deployment through GitHub integration
-- Environment variables configured in Vercel dashboard
+- Connect to GitHub repository
+- Set environment variables in Vercel dashboard
+- Set Root Directory as 'client'
+- Deploy
 
 ### Backend (Render)
-- Continuous deployment from GitHub
-- Environment variables set in Render dashboard
+- Connect to GitHub repository
+- Set environment variables in Render dashboard
+- Set Root Directory as 'server'
+- Deploy
+
+## Testing the Application
+
+1. Register a new user
+2. Login with credentials
+3. Create a new invoice
+4. View invoice list
+5. Try filtering and sorting
+6. Update an invoice
+7. Delete an invoice
 
 ## Contributing
-
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
@@ -158,12 +170,13 @@ The application will be available at `http://localhost:3000`
 5. Open a Pull Request
 
 ## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+## Author
+LASHETTY
 
 ## Acknowledgments
-
-- [React.js](https://reactjs.org/)
+- [React Documentation](https://reactjs.org/)
 - [Material-UI](https://mui.com/)
 - [Express.js](https://expressjs.com/)
 - [MongoDB](https://www.mongodb.com/)
