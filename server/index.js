@@ -14,6 +14,7 @@ app.use(cors({
   origin: [
     'http://localhost:3000',
     'http://localhost:3001',
+    'https://client-1ifx84bps-lashettys-projects.vercel.app',
     'https://client-5ca8pyrmd-lashettys-projects.vercel.app'
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
