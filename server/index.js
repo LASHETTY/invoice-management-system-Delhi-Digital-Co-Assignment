@@ -18,6 +18,7 @@ app.use(cors({
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
+  exposedHeaders: ['Content-Type', 'Authorization'],
   credentials: false
 }));
 
@@ -41,10 +42,10 @@ app.get('/api/test', (req, res) => {
   res.json({ message: 'Backend is working!' });
 });
 
-// Error handling middleware
+// Error handling
 app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).send('Something broke!');
+  console.error(err.stack);
+  res.status(500).json({ message: 'Something went wrong!' });
 });
 
 const PORT = process.env.PORT || 5000;
