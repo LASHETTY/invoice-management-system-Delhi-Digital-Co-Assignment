@@ -3,7 +3,7 @@
 A full-stack MERN (MongoDB, Express.js, React.js, Node.js) application for managing invoices with user authentication.
 
 ## Repository
-- GitHub: [https://github.com/LASHETTY/delhi-digital-co-invoice-management-system-assignment.git](https://github.com/LASHETTY/delhi-digital-co-invoice-management-system-assignment.git)
+- GitHub: [)
 
 ## Live Demo
 - Frontend (Vercel): [Coming Soon]
